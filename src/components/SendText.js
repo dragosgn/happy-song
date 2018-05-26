@@ -26,13 +26,12 @@ class Form extends React.Component {
       <div className="container">
         <div className="row justify-content-md-center">
           <div className="col-12">
-            <h2>News Content</h2>
-
+            <h2>Structured Content</h2>
             <form onSubmit={this.onSubmit} className="form">
               <div className="form-group">
                 <textarea onChange={this.onChange} className="form-control" />
                 <button type="submit" className="btn btn-primary">
-                  Create Video
+                  Analyze
                 </button>
               </div>
             </form>

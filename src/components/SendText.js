@@ -1,6 +1,5 @@
 import React from "react";
-
-import { compose, withStateHandlers, withHandlers } from "recompose";
+import "../App.css";
 
 class Form extends React.Component {
   constructor(props) {
@@ -10,18 +9,23 @@ class Form extends React.Component {
     };
   }
 
-  onChange = e =>
+  onChange = e => {
+    e.preventDefault();
     this.setState({
       content: e.target.value
     });
+  };
 
-  onSubmit = e => console.log(e);
+  onSubmit = e => {
+    e.preventDefault();
+  };
 
   render() {
+    console.log(this.state);
     return (
       <div>
-        <form onSubmit={onSubmit}>
-          <input type="text" onChange={onChange} />
+        <form onSubmit={this.onSubmit} className="form">
+          <input type="text" onChange={this.onChange} />
           <button type="submit">Create Video</button>
         </form>
       </div>

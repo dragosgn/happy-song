@@ -1,23 +1,18 @@
-import React, { Component } from "react";
-import styled, { ThemeProvider } from "styled-components";
 import logo from "./logo.svg";
+import "./App.css";
 import api from "./api";
 import test from "./test";
 import processor from "./process";
 import video from "./videoApi";
+import React, { Component } from "react";
 import SendText from "./components/SendText";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
 `;
-
-const theme = {
-  primary: "#2ecc71",
-  secondary: "#007bff",
-  terciary: "#0062cc"
-};
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +22,7 @@ class App extends Component {
       text: ""
     };
   }
+
   async componentDidMount() {
     const entities = await api.analyzeEntities(test.real, "entities");
     const processed = processor.processEntities(entities);

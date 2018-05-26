@@ -1,7 +1,8 @@
 import React from "react";
 import "../App.css";
 import styled from "styled-components";
-import { Button } from "semantic-ui-react";
+
+import Form from "./Form";
 
 const Header = styled.div`
   width: 100%;
@@ -9,22 +10,27 @@ const Header = styled.div`
   color: white;
   background-color: #2ecc71;
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   justify-content: space-between;
   align-items: flex-end;
   align-content: flex-end;
+  height: 80px;
+  margin-bottom: 1rem;
 `;
 
 const Body = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 `;
 
 const Logo = styled.div`
-  font-size: 30px;
+  font-size: 36px;
 `;
 
-const PageTitle = styled.div`
+const BodyTitle = styled.div`
   display: flex;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
 `;
 
 const Menu = styled.div`
@@ -32,16 +38,17 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  :hover {
+    color: #2c3e50;
+  }
 `;
 
 const Root = styled.div`
   width: 100%;
   max-width: 1100px;
-`;
-
-const StyledButton = styled(Button)`
-  font-family: "Lobster", cursive !important;
 `;
 
 class Form extends React.Component {
@@ -67,7 +74,9 @@ class Form extends React.Component {
     return (
       <Root>
         <Header>
-          <Logo>captio.io</Logo>
+          <Logo>
+            <p>captio.io</p>
+          </Logo>
           <Menu>
             <MenuItem>Analyze</MenuItem>
             <MenuItem>Process</MenuItem>
@@ -75,25 +84,8 @@ class Form extends React.Component {
           </Menu>
         </Header>
         <Body>
-          <div className="row justify-content-md-center">
-            <div className="col-12">
-              <PageTitle>
-                <h3>Structured Content</h3>
-              </PageTitle>
-              <form onSubmit={this.onSubmit} className="form">
-                <div className="form-group">
-                  <textarea
-                    onChange={this.onChange}
-                    className="form-control"
-                    style={{ width: "100%" }}
-                  />
-                  <StyledButton primary type="submit">
-                    Analyze
-                  </StyledButton>
-                </div>
-              </form>
-            </div>
-          </div>
+          <BodyTitle>Select Content</BodyTitle>
+          <Form />
         </Body>
       </Root>
     );

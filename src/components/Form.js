@@ -1,21 +1,49 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import styled from "styled-components";
 
-const StyledButton = styled(Button)`
-  font-family: "Lobster", cursive !important;
+const Button = styled.button`
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  background-color: ${props => props.theme.secondary};
+  color: white;
+  border: 1px solid ${props => props.theme.secondary};
+  border-radius: 2px;
+  font-family: "Lobster", cursive;
+  :hover {
+    background-color: ${props => props.theme.terciary};
+  }
 `;
 
-export default () => (
-  <form onSubmit={this.onSubmit} className="form">
-    <div className="form-group">
-      <textarea
-        onChange={this.onChange}
-        className="form-control"
-        style={{ width: "100%" }}
-      />
-      <StyledButton primary type="submit">
-        Analyze
-      </StyledButton>
-    </div>
-  </form>
-);
+export default class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: ""
+    };
+  }
+
+  onChange = e => {
+    e.preventDefault();
+    this.setState({
+      content: e.target.value
+    });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+  };
+  render() {
+    return (
+      <form onSubmit={this.onSubmit} className="form">
+        <div className="form-group">
+          <textarea
+            onChange={this.onChange}
+            className="form-control"
+            style={{ width: "100%" }}
+          />
+          <Button type="submit">Analyze</Button>
+        </div>
+      </form>
+    );
+  }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SendText from "./components/SendText";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -8,12 +8,20 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const theme = {
+  primary: "#2ecc71",
+  secondary: "#007bff",
+  terciary: "#0062cc"
+};
+
 class App extends Component {
   render() {
     return (
-      <Container>
-        <SendText />
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <SendText />
+        </Container>
+      </ThemeProvider>
     );
   }
 }

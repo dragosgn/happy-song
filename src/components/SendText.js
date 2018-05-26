@@ -14,7 +14,7 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   align-content: flex-end;
-  height: 80px;
+  height: 60px;
   margin-bottom: 1rem;
 `;
 
@@ -22,8 +22,8 @@ const Body = styled.div`
   padding: 1rem 1rem;
 `;
 
-const Logo = styled.div`
-  font-size: 36px;
+const Logo = styled.p`
+  font-size: 40px;
 `;
 
 const BodyTitle = styled.div`
@@ -35,12 +35,17 @@ const BodyTitle = styled.div`
 
 const Menu = styled.div`
   display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
 `;
 
-const MenuItem = styled.div`
-  padding: 0.5rem 1rem;
+const MenuItem = styled.p`
+  padding: 0.25rem 1rem;
   font-size: 1.5rem;
+  user-select: none;
+  font-family: "Lobster", cursive;
   cursor: pointer;
+  color: ${props => (props.isActive ? "#2c3e50" : "white")};
   :hover {
     color: #2c3e50;
   }
@@ -51,36 +56,47 @@ const Root = styled.div`
   max-width: 1100px;
 `;
 
-class Form extends React.Component {
+class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: ""
+      selectedCategory: "analyze"
     };
   }
 
-  onChange = e => {
-    e.preventDefault();
+  onClick = e => {
+    // e.preventDefault();
     this.setState({
-      content: e.target.value
+      selectedCategory: e.target.id
     });
   };
-
-  onSubmit = e => {
-    e.preventDefault();
-  };
-
   render() {
     return (
       <Root>
         <Header>
-          <Logo>
-            <p>captio.io</p>
-          </Logo>
+          <Logo>captio.io</Logo>
           <Menu>
-            <MenuItem>Analyze</MenuItem>
-            <MenuItem>Process</MenuItem>
-            <MenuItem>Download</MenuItem>
+            <MenuItem
+              isActive={this.state.selectedCategory === "analyze"}
+              id="analyze"
+              onClick={this.onClick}
+            >
+              Analyze
+            </MenuItem>
+            <MenuItem
+              onClick={this.onClick}
+              isActive={this.state.selectedCategory === "process"}
+              id="process"
+            >
+              Process
+            </MenuItem>
+            <MenuItem
+              onClick={this.onClick}
+              isActive={this.state.selectedCategory === "download"}
+              id="download"
+            >
+              Download
+            </MenuItem>
           </Menu>
         </Header>
         <Body>
@@ -92,4 +108,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default Page;

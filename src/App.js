@@ -8,10 +8,6 @@ import React, { Component } from "react";
 import SendText from "./components/SendText";
 import styled, { ThemeProvider } from "styled-components";
 
-export const REACT_APP_VIMEO_AUTH = "303aa98c5e610a385942ab26d22dadad";
-export const REACT_APP_GOOGLE_API_KEY =
-  "AIzaSyBVm9BZ1IsXqpdL7_0jiLteBnsHzAxK2ds";
-
 const Container = styled.div`
   display: flex;
   justify-content: center;

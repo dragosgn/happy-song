@@ -44,12 +44,12 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Container>
           <SendText />
+          <div
+            dangerouslySetInnerHTML={this.state.links[0]}
+            style={{ height: "400px" }}
+          />
+          <div>{JSON.stringify(this.state.text)}</div>
         </Container>
-        <div
-          dangerouslySetInnerHTML={this.state.links[0]}
-          style={{ height: "400px" }}
-        />
-        <div>{JSON.stringify(this.state.text)}</div>
       </ThemeProvider>
     );
   }

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
+import styled, { ThemeProvider } from "styled-components";
 import logo from "./logo.svg";
 import api from "./api";
 import test from "./test";
 import processor from "./process";
 import video from "./videoApi";
-import React, { Component } from "react";
 import SendText from "./components/SendText";
-import styled, { ThemeProvider } from "styled-components";
 
 const Container = styled.div`
   display: flex;

@@ -4,8 +4,14 @@
 
 .btn {
   margin-top: 1rem;
+  float: right;
 }
 
 .form-control {
-  height: 300px;
+  height: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1rem;
 }

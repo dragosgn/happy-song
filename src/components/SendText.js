@@ -23,11 +23,20 @@ class Form extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <form onSubmit={this.onSubmit} className="form">
-          <input type="text" onChange={this.onChange} />
-          <button type="submit">Create Video</button>
-        </form>
+      <div className="container">
+        <div className="row">
+          <div className="col-8">
+            <form onSubmit={this.onSubmit} className="form">
+              <div className="form-group">
+                <label> News Content</label>
+                <textarea onChange={this.onChange} className="form-control" />
+                <button type="submit" className="btn btn-primary">
+                  Create Video
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }

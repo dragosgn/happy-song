@@ -8,6 +8,34 @@ export default {
     E! reported right after the wedding that Namibia was not the destination. 
     And royal expert Omid Scobie, who was ABC News's royal contributor during 
     the wedding, confirmed that really any destination the press catches wind of is out.`,
+    media: `
+    The Topic this time
+Unleash the potential of A.I. for Media Business!
+
+„Software is eating the world – but AI is eating software“ 
+(Jensen Huang, Nvidia)
+
+The rise and fast growth of artificial intelligence might be biggest disruption in digital business that we have seen over the last decades.  We want to unleash the potential of theses new possibilities and technologies for the media and music business.
+
+Together with you we want to explore the future of AI and help concepts to come to reality within 24 hours of extended hacking.
+
+Three challenges await you and registration will open soon.
+
+ 
+
+The Mission
+Join Media Hackday
+
+and explore, how A.I. will bring up new features and possibilities that will shapen the future of publishing, music ,commerce and advertising.
+
+The hackathon will bring together programmers, designers, mobility experts, product visionaries and creative folks. Their mission is to develop new ideas to bring together A.I. with publishing, music and online retail.
+
+The Media Hackday takes place at the Axel Springer The Venue
+
+Prizes, an international jury and the praise from the community and media owners are waiting.
+    
+    `,
+
     real: `
         Real Madrid faces Liverpool on Saturday in the UEFA Champions League final in Kiev, Ukraine. 
         Madrid is in the final four the third year in a row, and the fourth time in five years. 

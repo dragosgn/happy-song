@@ -4,7 +4,7 @@ const urls = {
     entities: `https://language.googleapis.com/v1/documents:analyzeEntities?key=${apiKey}`
 }
 
-export const analyzeEntities = async function(content, analysisType){
+export const analyzeEntities = async function (content, analysisType) {
 
     const payload = {
         document: {
@@ -12,7 +12,7 @@ export const analyzeEntities = async function(content, analysisType){
             type: "PLAIN_TEXT"
         }
     }
-    const response = await fetch( urls[analysisType], {
+    const response = await fetch(urls[analysisType], {
         method: "POST",
         headers: {
             "content-type": 'application/json; charset=UTF-8'

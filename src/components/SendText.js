@@ -51,16 +51,37 @@ const MenuItem = styled.p`
   }
 `;
 
+const Button = styled.button`
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  background-color: ${props => props.theme.secondary};
+  color: white;
+  border: 1px solid ${props => props.theme.secondary};
+  border-radius: 2px;
+  font-family: "Lobster", cursive;
+  :hover {
+    background-color: ${props => props.theme.terciary};
+  }
+`;
+
 const Root = styled.div`
   width: 100%;
   max-width: 1100px;
+`;
+
+const Row = styled.div`
+  height: 400px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 `;
 
 class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCategory: "analyze"
+      selectedCategory: "start"
     };
   }
 
@@ -99,6 +120,16 @@ class Page extends React.Component {
             </MenuItem>
           </Menu>
         </Header>
+
+        {this.state.selectedCategory === "start" && (
+          <Body>
+            <Row>
+              <Button id="analyze" onClick={this.onClick}>
+                Start
+              </Button>
+            </Row>
+          </Body>
+        )}
 
         {this.state.selectedCategory === "analyze" && (
           <Body>

@@ -27,7 +27,7 @@ class App extends Component {
     super(props);
     this.state = {
       links: [],
-      text: ""
+      text: undefined
     };
   }
 

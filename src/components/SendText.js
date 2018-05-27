@@ -19,7 +19,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 1rem 1rem;
+  margin-top: 1rem;
 `;
 
 const Logo = styled.p`
@@ -99,10 +99,25 @@ class Page extends React.Component {
             </MenuItem>
           </Menu>
         </Header>
-        <Body>
-          <BodyTitle>Select Content</BodyTitle>
-          <Form />
-        </Body>
+
+        {this.state.selectedCategory === "analyze" && (
+          <Body>
+            <BodyTitle>Select Content</BodyTitle>
+            <Form next={this.onClick} />
+          </Body>
+        )}
+
+        {this.state.selectedCategory === "process" && (
+          <Body>
+            <BodyTitle>Process</BodyTitle>
+          </Body>
+        )}
+
+        {this.state.selectedCategory === "download" && (
+          <Body>
+            <BodyTitle>Distribbute</BodyTitle>
+          </Body>
+        )}
       </Root>
     );
   }

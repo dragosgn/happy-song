@@ -2,31 +2,39 @@ import React from "react";
 
 import styled from "styled-components";
 
-
-const styleCont = styled.div`
+const StyleCont = styled.div`
   display: flex;
-`
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+`;
 
-const card = styled.div`
+const Card = styled.div`
   height: 54px;
   border: 1px solid;
   border-radius: 3px;
-  width: 30%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-`
+  flex-direction: column;
+  padding: 1rem;
+  margin: 0.5rem;
+  max-width: 230px;
+`;
 
-const listItem = (e) => (
-  <card>
-    <p><strong>{e.name}</strong> {e.type} </p>
-    <p>Salience: {e.salience}</p>
-  </card>
-)
+const Title = styled.p`
+  display: flex;
+`;
+
+const listItem = e => (
+  <Card>
+    <Title>
+      <strong>{e.name}:</strong> {e.type}
+    </Title>
+    <Title>Salience: {e.salience}</Title>
+  </Card>
+);
 
 export default ({ entities: { entities } }) => {
   console.log(entities);
 
   const entitiesRender = entities.map(e => listItem(e));
-  return <styleCont >{entitiesRender}</styleCont >;
+  return <StyleCont>{entitiesRender}</StyleCont>;
 };

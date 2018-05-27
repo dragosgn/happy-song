@@ -20,7 +20,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `;
 
 const Logo = styled.p`

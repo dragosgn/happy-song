@@ -60,6 +60,11 @@ const Root = styled.div`
   max-width: 1100px;
 `;
 
+const Footer = styled.div`
+  padding: 2rem;
+  display: flex;
+`;
+
 const PlaceHolder = styled.div`
   height: 400px;
   width: 100%;
@@ -149,6 +154,7 @@ class Page extends React.Component {
             <Download />
           </Body>
         )}
+        <Footer />
       </Root>
     );
   }

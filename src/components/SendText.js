@@ -2,6 +2,8 @@ import React from "react";
 import "../App.css";
 import styled from "styled-components";
 
+import Process from "./Process";
+
 import Form from "./Form";
 
 import { Button } from "./styled";
@@ -136,6 +138,7 @@ class Page extends React.Component {
         {this.state.selectedCategory === "process" && (
           <Body>
             <BodyTitle>Process</BodyTitle>
+            <Process />
           </Body>
         )}
 

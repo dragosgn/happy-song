@@ -99,10 +99,25 @@ class Page extends React.Component {
             </MenuItem>
           </Menu>
         </Header>
-        <Body>
-          <BodyTitle>Select Content</BodyTitle>
-          <Form />
-        </Body>
+
+        {this.state.selectedCategory === "analyze" && (
+          <Body>
+            <BodyTitle>Select Content</BodyTitle>
+            <Form />
+          </Body>
+        )}
+
+        {this.state.selectedCategory === "process" && (
+          <Body>
+            <BodyTitle>Process</BodyTitle>
+          </Body>
+        )}
+
+        {this.state.selectedCategory === "download" && (
+          <Body>
+            <BodyTitle>Distribbute</BodyTitle>
+          </Body>
+        )}
       </Root>
     );
   }

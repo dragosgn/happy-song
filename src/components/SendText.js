@@ -19,7 +19,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 1rem 1rem;
+  margin-top: 1rem;
 `;
 
 const Logo = styled.p`

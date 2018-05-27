@@ -7,6 +7,7 @@ import Process from "./Process";
 import Form from "./Form";
 
 import { Button } from "./styled";
+import Download from "./Download";
 
 const Header = styled.div`
   font-family: "Lobster", cursive;
@@ -145,6 +146,7 @@ class Page extends React.Component {
         {this.state.selectedCategory === "download" && (
           <Body>
             <BodyTitle>Distribbute</BodyTitle>
+            <Download />
           </Body>
         )}
       </Root>

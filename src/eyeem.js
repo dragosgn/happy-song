@@ -27,7 +27,7 @@ const url = `https://vision-api.eyeem.com/v1/analyze`
 export default async function eyeem(){
 
     const response = await fetch(url, {
-        method: "GET",
+        method: "POST",
         mode: "cors",
         headers: {
             "Authorization": `Bearer gck7gaj6us00vfned6f4juagma3gfthv6entijb1`,

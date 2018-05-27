@@ -27,6 +27,7 @@ class App extends Component {
     super(props);
     this.state = {
       links: [],
+      imagesAnalysis: [],
       text: undefined
     };
   }
@@ -37,6 +38,10 @@ class App extends Component {
 
     axel()
 
+    const imagesAnalysis = await eyeem()
+    this.setState({
+      imagesAnalysis
+    })
     const query = processed && processed.ORGANIZATION.map(p => p.name);
     const links = await video(`${query[0]}`);
 

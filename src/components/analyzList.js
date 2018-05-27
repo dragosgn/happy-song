@@ -8,10 +8,5 @@ export default ({entities:{entities}}) => {
     const entitiesRender = entities.map((e) => (<p>{e.name}</p>))
     return <div>{entitiesRender}</div>
 
-
-
-
-
-
 }
 

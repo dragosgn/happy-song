@@ -6,9 +6,15 @@ import processor from "./process";
 import video from "./videoApi";
 import React, {Component} from "react";
 import SendText from "./components/SendText";
+<<<<<<< HEAD
 import styled, {ThemeProvider} from "styled-components";
 import Analyz from './components/analyzList'
 
+=======
+import styled, { ThemeProvider } from "styled-components";
+import axel from './axelContent'
+import eyeem from './eyeem'
+>>>>>>> de49d27c5421cb660be8a9397f8d3bb134975f81
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +29,7 @@ const theme = {
 };
 
 class App extends Component {
+<<<<<<< HEAD
     constructor(props) {
         super(props);
         this.state = {
@@ -61,6 +68,51 @@ class App extends Component {
             </ThemeProvider>
         );
     }
+=======
+  constructor(props) {
+    super(props);
+    this.state = {
+      links: [],
+      imagesAnalysis: [],
+      text: undefined
+    };
+  }
+
+  async componentDidMount() {
+    const entities = await api.analyzeEntities(test.real, "entities");
+    const processed = processor.processEntities(entities);
+
+    axel()
+
+    const imagesAnalysis = await eyeem()
+    this.setState({
+      imagesAnalysis
+    })
+    const query = processed && processed.ORGANIZATION.map(p => p.name);
+    const links = await video(`${query[0]}`);
+
+    this.setState({
+      links
+    });
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Container>
+          <SendText />
+          <div>{JSON.stringify(this.state.text)}</div>
+        </Container>
+      </ThemeProvider>
+    );
+  }
+>>>>>>> de49d27c5421cb660be8a9397f8d3bb134975f81
 }
 
 export default App;
+
+
+// <div
+//   dangerouslySetInnerHTML={this.state.links[0]}
+//   style={{ height: "400px" }}
+// />}

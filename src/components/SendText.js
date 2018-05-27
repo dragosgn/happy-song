@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 import Form from "./Form";
 
+import { Button } from "./styled";
+
 const Header = styled.div`
-  width: 100%;
   font-family: "Lobster", cursive;
   color: white;
   background-color: #2ecc71;
@@ -19,7 +20,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 1rem 1rem;
+  margin-top: 1.5rem;
 `;
 
 const Logo = styled.p`
@@ -56,11 +57,21 @@ const Root = styled.div`
   max-width: 1100px;
 `;
 
+const PlaceHolder = styled.div`
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecf0f1;
+`;
+
 class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCategory: "analyze"
+      selectedCategory: "start"
     };
   }
 
@@ -100,10 +111,25 @@ class Page extends React.Component {
           </Menu>
         </Header>
 
+        {this.state.selectedCategory === "start" && (
+          <Body>
+            <PlaceHolder>
+              <Button
+                id="analyze"
+                onClick={this.onClick}
+                color="#f39c12"
+                secondaryColor="#e67e22"
+              >
+                Start
+              </Button>
+            </PlaceHolder>
+          </Body>
+        )}
+
         {this.state.selectedCategory === "analyze" && (
           <Body>
             <BodyTitle>Select Content</BodyTitle>
-            <Form />
+            <Form next={this.onClick} />
           </Body>
         )}
 

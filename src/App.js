@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import SendText from "./components/SendText";
 import styled, { ThemeProvider } from "styled-components";
 import axel from './axelContent'
+import eyeem from './eyeem'
 
 const Container = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ class App extends Component {
 
     const query = processed && processed.ORGANIZATION.map(p => p.name);
     const links = await video(`${query[0]}`);
-    
+
     this.setState({
       links
     });

@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import Form from "./Form";
 
+import { Button } from "./styled";
+
 const Header = styled.div`
   width: 100%;
   font-family: "Lobster", cursive;
@@ -51,30 +53,18 @@ const MenuItem = styled.p`
   }
 `;
 
-const Button = styled.button`
-  padding: 0.25rem 1rem;
-  font-size: 1.5rem;
-  background-color: ${props => props.theme.secondary};
-  color: white;
-  border: 1px solid ${props => props.theme.secondary};
-  border-radius: 2px;
-  font-family: "Lobster", cursive;
-  :hover {
-    background-color: ${props => props.theme.terciary};
-  }
-`;
-
 const Root = styled.div`
   width: 100%;
   max-width: 1100px;
 `;
 
-const Row = styled.div`
+const PlaceHolder = styled.div`
   height: 400px;
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: center;
+  background-color: #ecf0f1;
 `;
 
 class Page extends React.Component {
@@ -123,11 +113,11 @@ class Page extends React.Component {
 
         {this.state.selectedCategory === "start" && (
           <Body>
-            <Row>
+            <PlaceHolder>
               <Button id="analyze" onClick={this.onClick}>
                 Start
               </Button>
-            </Row>
+            </PlaceHolder>
           </Body>
         )}
 

@@ -19,7 +19,7 @@ export const Button = styled.button`
   }
 `;
 
-export const buttonCss = styled.css`
+export const buttonCss = css`
   padding: 0.25rem 1.5rem;
   cursor: pointer;
   font-size: 1.5rem;

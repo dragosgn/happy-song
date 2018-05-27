@@ -7,7 +7,6 @@ import Form from "./Form";
 import { Button } from "./styled";
 
 const Header = styled.div`
-  width: 100%;
   font-family: "Lobster", cursive;
   color: white;
   background-color: #2ecc71;
@@ -60,6 +59,7 @@ const Root = styled.div`
 
 const PlaceHolder = styled.div`
   height: 400px;
+  width: 100%;
   display: flex;
   align-content: center;
   align-items: center;
@@ -114,7 +114,12 @@ class Page extends React.Component {
         {this.state.selectedCategory === "start" && (
           <Body>
             <PlaceHolder>
-              <Button id="analyze" onClick={this.onClick}>
+              <Button
+                id="analyze"
+                onClick={this.onClick}
+                color="#f39c12"
+                secondaryColor="#e67e22"
+              >
                 Start
               </Button>
             </PlaceHolder>

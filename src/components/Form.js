@@ -3,18 +3,7 @@ import styled from "styled-components";
 
 import initialContext from "../test";
 
-const Button = styled.button`
-  padding: 0.25rem 1rem;
-  font-size: 1.5rem;
-  background-color: ${props => props.theme.secondary};
-  color: white;
-  border: 1px solid ${props => props.theme.secondary};
-  border-radius: 2px;
-  font-family: "Lobster", cursive;
-  :hover {
-    background-color: ${props => props.theme.terciary};
-  }
-`;
+import { Button } from "./styled";
 
 const StyledForm = styled.form`
   padding: 0.5rem;

@@ -144,13 +144,13 @@ class Page extends React.Component {
         {this.state.selectedCategory === "process" && (
           <Body>
             <BodyTitle>Process</BodyTitle>
-            <Process />
+            <Process next={this.onClick}/>
           </Body>
         )}
 
         {this.state.selectedCategory === "download" && (
           <Body>
-            <BodyTitle>Distribbute</BodyTitle>
+            <BodyTitle>Distribute</BodyTitle>
             <Download />
           </Body>
         )}

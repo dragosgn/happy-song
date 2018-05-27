@@ -1,11 +1,20 @@
 import React from "react";
+import styled from "styled-components";
+
 
 import api from "../api";
 import test from "../test";
 import processor from "../process";
 import video from "../videoApi";
 import Analyz from "./analyzList";
+import {Button} from "./styled";
 
+const Row = styled.div`
+padding: 1rem 0;
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+`;
 export default class Process extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +45,9 @@ export default class Process extends React.Component {
       <div>
         <div>{JSON.stringify(this.state.text)}</div>
         <Analyz entities={this.state.entities} />
+        <Row>
+        <Button id="download" onClick={this.props.next}>Download</Button>
+      </Row>
       </div>
     );
   }

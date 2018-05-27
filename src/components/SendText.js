@@ -103,7 +103,7 @@ class Page extends React.Component {
         {this.state.selectedCategory === "analyze" && (
           <Body>
             <BodyTitle>Select Content</BodyTitle>
-            <Form />
+            <Form next={this.onClick} />
           </Body>
         )}
 

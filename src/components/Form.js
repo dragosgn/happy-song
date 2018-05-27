@@ -63,7 +63,9 @@ export default class Form extends React.Component {
           value={this.state.content}
         />
         <Row>
-          <Button type="submit">Analyze</Button>
+          <Button id="process" type="submit" onClick={this.props.next}>
+            Analyze
+          </Button>
         </Row>
       </StyledForm>
     );
